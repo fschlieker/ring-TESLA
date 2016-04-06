@@ -246,22 +246,19 @@ static void computeEc(poly Ec, const unsigned char *sk, const uint32_t pos_list[
   int pos;
   double * e;
   e = (double*)sk;
-  double temp;
+
   for(i=0;i<PARAM_N;i++)
     Ec[i] = 0.0;
-  for(i=0;i<PARAM_N;i++)
+  
+  for(i=0;i<PARAM_W;i++)
   {
-    temp=e[i];
-	for(j=0;j<PARAM_W;j++)
-	{  
-        pos=pos_list[j]+i;
-	    if(pos>=PARAM_N){
-		    Ec[pos-PARAM_N] += temp;
-	    }
-	    else{
-		    Ec[pos] -= temp;
-	    }
-	}
+    pos = pos_list[i];
+    for(j=0;j<pos;j++) {
+        Ec[j] += e[j+PARAM_N - pos];
+    }
+    for(j=pos;j<PARAM_N;j++) {
+        Ec[j] -= e[j-pos];
+    }
   }
 }
 
