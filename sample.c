@@ -78,19 +78,16 @@ void generate_c(uint32_t *pos_list, unsigned char *c_bin)
     //sample a position (0 to n-1). Use two bytes
     pos = 0;
     pos = (r[cnt]<<8) | (r[cnt+1]);
-    pos = pos & ((1<<PARAM_N_LOG)-1);
+    pos &= PARAM_N-1;
     cnt += 2;
 
-    if (pos<PARAM_N)
+    //position is between [0,n-1]
+    if (c[pos] == 0)
     {
-      //position is between [0,n-1]
-      if (c[pos] == 0)
-      {
-        pos_list[i] = pos;
-	c[pos]=1;
-	i++;
-        cnt++;
-      }
+      pos_list[i] = pos;
+      c[pos]=1;
+      i++;
+      cnt++;
     }
   }
 }
