@@ -174,7 +174,7 @@ void ntt_transform(poly out, const poly o)
       vt = _mm256_sub_pd(vt,vc);
      vx4 = _mm256_load_pd(out+offset+s+32);
      vx5 = _mm256_sub_pd(vx4, vt);
-      vc = _mm256_mul_pd(vx5, vpinv)
+      vc = _mm256_mul_pd(vx5, vpinv);
       vc = _mm256_round_pd(vc,0x08);
       vc = _mm256_mul_pd(vc, vp);
      vx5 = _mm256_sub_pd(vx5,vc);
