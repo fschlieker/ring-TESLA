@@ -1,5 +1,5 @@
 CC = /usr/bin/gcc
-CFLAGS = -msse2avx -march=corei7-avx -O3 -fomit-frame-pointer -Wall -Wextra -g
+CFLAGS = -msse2avx -march=corei7-avx -O3 -fomit-frame-pointer -Wall -Wextra -g -mfma
 PYTHON3 = python3
 
 #-msse2avx -march=corei7-avx 
