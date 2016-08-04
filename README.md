@@ -8,8 +8,8 @@ The goal is to demonstrate possible optimizations by rewriting parts of the code
 
 | Operation   | Sign cycles (crypto_sign) | Improvement | Verify cycles (crypto_sign_open) | Improvement |
 | ------------| -------------------------:| -----------:|---------------------------------:| -----------:|
-| Baseline [1]|                    522404 |             |                       209716     |             |
-| Optimized   |                    199515 |       2.62x |                        94088     |       2.23x |
+| Baseline [1]|                    393673 |             |                       144807     |             |
+| Optimized   |                    208547 |       1.89x |                        81290     |       1.78x |
 
 Authors:
 --------
@@ -20,6 +20,11 @@ Authors:
 (1) Intel Corporation, Israel Development Center, Haifa, Israel  
 (2) University of Haifa, Israel  
 (3) Ruhr University Bochum, Germany
+
+Acknowledgement:
+----------------
+
+This research was supported by the PQCRYPTO project, which was partially funded by the European Commission Horizon 2020 research Programme, grant #645622, by the ISRAEL SCIENCE FOUNDATION (grant No. 1018/16), and by the Blavatnik Interdisciplinary Cyber Research Center (ICRC) at the Tel Aviv University.
 
 Copyright:
 ----------
